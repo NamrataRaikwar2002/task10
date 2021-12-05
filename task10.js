@@ -9,7 +9,7 @@ const availableNotes = [2000, 500, 100, 20, 10, 5, 1]
 
 checkButton.addEventListener("click", function billamount() {
     hideMessage();
-    if (Number.isInteger(billInput) & Number.isInteger(cashInput)){
+    if (Number.isInteger(billInput) && Number.isInteger(cashInput)){
         if (billInput.value > 0) {
             if (cashInput.value >= billInput.value) {
                 const amountToreturn = cashInput.value - billInput.value;
