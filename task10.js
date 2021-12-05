@@ -9,20 +9,25 @@ const availableNotes = [2000, 500, 100, 20, 10, 5, 1]
 
 checkButton.addEventListener("click", function billamount() {
     hideMessage();
-    if (billInput.value > 0) {
-        if (cashInput.value >= billInput.value) {
-            const amountToreturn = cashInput.value - billInput.value;
-            calculateChange(amountToreturn);
-
+    if (Number.isInteger(billInput) & Number.isInteger(cashInput)){
+        if (billInput.value > 0) {
+            if (cashInput.value >= billInput.value) {
+                const amountToreturn = cashInput.value - billInput.value;
+                calculateChange(amountToreturn);
+    
+            } else {
+                showMessage("cash should be greater or equal to bill amount");
+            }
+    
         } else {
-            showMessage("cash should be greater or equal to bill amount");
+            showMessage("bill amount should greater than 0");
         }
-
-    } else {
-        showMessage("bill amount should greater than 0");
+    }else{
+        showMessage("Please enter integer value")
     }
 
 });
+   
 
 function calculateChange(amountToreturn) {
     for (let i = 0; i < availableNotes.length; i++) {
