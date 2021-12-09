@@ -8,33 +8,33 @@ const noOfnotes = document.querySelectorAll(".no-of-notes")
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1]
 
 checkButton.addEventListener("click", function billamount() {
-    hideMessage();
-    if (Number.isInteger(billInput) && Number.isInteger(cashInput)){
+        hideMessage();
         if (billInput.value > 0) {
-            if (cashInput.value >= billInput.value) {
+            if (billInput.value < cashInput.value) {
                 const amountToreturn = cashInput.value - billInput.value;
                 calculateChange(amountToreturn);
-    
-            } else {
+
+            }else if(billInput.value > cashInput.value) {
                 showMessage("cash should be greater or equal to bill amount");
+            }else{
+                showMessage("No change")
             }
-    
+
         } else {
             showMessage("bill amount should greater than 0");
         }
-    }else{
-        showMessage("Please enter integer value")
     }
 
-});
-   
+
+);
+
 
 function calculateChange(amountToreturn) {
     for (let i = 0; i < availableNotes.length; i++) {
 
         const numberOfnotes = Math.trunc(
             amountToreturn / availableNotes[i]);
-        amountToreturn=amountToreturn % availableNotes[i];
+        amountToreturn = amountToreturn % availableNotes[i];
 
         noOfnotes[i].innerText = numberOfnotes;
     }

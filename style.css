@@ -4,6 +4,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-size: large;
+    background-color: rgb(156, 169, 206);
 }
 :root{
     --primary-color:
@@ -15,11 +16,11 @@ body{
 .box1{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 25vw;
     text-align: center;
-    background-color:
-    #9CA3AF;
+    /* background-color:wheat; */
     padding-bottom: 1rem;
+    border-spacing: 1rem;
 }
 
 .input{
@@ -33,24 +34,21 @@ body{
 }
 
 #check-button{
-    border: 1px solid var(--primary-color);
-    border-width: 0.2rem;
-    padding: 0.8rem;
-    border-radius: 0.8rem;
-    margin-left:10rem;
-    margin-right: 10rem;
-    font-size: large;
-    background-color: 
-    #047857;
-
+   width: 5vw;
+   padding:0.3rem;
+    margin: auto;
+    background-color: rgb(105, 138, 230);
+    border-radius: 0.3rem;
 }
 #check-button:hover{
-    background-color:#2e8669;
+    background-color:rgb(105, 138, 230);
 }
 
 table ,th,td{
     border: 1px solid var(--primary-color);
-    border-width: 0.2rem;
+    table-layout: fixed;
+    width: 2.8rem;
+    border-collapse: collapse;
 }
 
 #error-message{
